@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Site</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="app">
+    
+    <div class="container" id="app-music">
+    	<div class="row" ng-controller="MusicList as mList">
+    		<div class="col-sm-12">
+    			<div class="form-group">
+    				<div class="input-group">
+    					<input type="text" ng-model="mList.search_music" class="form-control">
+    					<div class="input-group-btn">
+    						<button ng-click="mList.searchMusic()" class="btn btn-success">search</button>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-sm-3" ng-repeat="item in mList.music">
+    			<div class="card" ng-show="item.id.length > 0" id="{{ item.id }}">
+    				<a href 
+    				ng-click="mList.handlePlay(item.stream_url, item.id)">
+    				   <img class="img-fluid" ng-src="{{ item.background_url }}" alt="">
+	    				<div class="card-play">
+
+	    					<span data-btn="play" class="play_btn" id="play-btn-{{item.id}}"
+	    					ng-show="mList.play_icon"
+	    					><i class="fa fa-play" aria-hidden="true"></i></span>
+
+	    					<span data-btn="pause" class="pause_btn" id="pause-btn-{{item.id}}"
+	    					ng-show="mList.pause_icon"
+	    				    ><i class="fa fa-pause" aria-hidden="true"></i></span>
+	    				</div>
+    				</a>
+    				
+    			</div>
+    		</div><!-- item -->
+    	</div><!-- row -->
+    </div><!-- container -->
+	
+
+
+	<!-- scripts -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!-- scripts -->
+	
+</body>
+</html>

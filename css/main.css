@@ -1,0 +1,41 @@
+#app-music .card {
+	margin-top: 30px;
+	transition-property: box-shadow;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+#app-music .card:hover {
+	box-shadow: -0.8px 0.8px 20px rgba(9,9,9,0.5);
+}
+#app-music .card-shadow {
+	box-shadow: -0.8px 0.8px 20px rgba(9,9,9,0.5);
+}
+#app-music .card .card-play {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto auto;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #fff;
+	padding-top: 13px;
+	padding-left: 19px;
+	display: none;
+	transition-property: block;
+	transition-duration: 0.3s;
+}
+#app-music .card:hover .card-play {
+	display: block;
+}
+#app-music .card .card-play i {
+	margin: auto;
+}
+#app-music .card .card-play span.pause-btn-*{
+	display: none;
+}
+#app-music .form-group {
+	margin-top: 30px;
+}
